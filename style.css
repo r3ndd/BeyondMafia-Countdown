@@ -46,7 +46,7 @@ a {
 @media (max-width: 700px) {
 	.time {
 		flex-flow: column;
-		font-size: 120px;
+		font-size: 100px;
 	}
 
 	.time-unit {
