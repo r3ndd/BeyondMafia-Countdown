@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css" />
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="time">
+		<div id="days" class="time-unit"></div>
+		<div id="hours" class="time-unit"></div>
+		<div id="minutes" class="time-unit"></div>
+		<div id="seconds" class="time-unit"></div>
+	</div>
+
+	<script>
+		const scheduledTime = 1672799400000;
+		const dayLength = 1000 * 60 * 60 * 24;
+		const hourLength = 1000 * 60 * 60;
+		const minuteLength = 1000 * 60;
+		const secondLength = 1000;
+
+		function updateUI() {
+			var diff = scheduledTime - Date.now();
+			var days, hours, minutes, seconds;
+
+			if (diff >= 0) {
+				days = Math.floor(diff / dayLength);
+				hours = Math.floor((diff - days * dayLength) / hourLength);
+				minutes = Math.floor((diff - days * dayLength - hours * hourLength) / minuteLength);
+				seconds = Math.floor((diff - days * dayLength - hours * hourLength - minutes * minuteLength) / secondLength);
+			}
+			else {
+				days, hours, minutes, seconds = 0;
+			}
+
+			document.getElementById("days").innerText = `${days}d`;
+			document.getElementById("hours").innerText = `${hours}h`;
+			document.getElementById("minutes").innerText = `${minutes}m`;
+			document.getElementById("seconds").innerText = `${seconds}s`;
+		}
+
+		setInterval(updateUI, 1000);
+		updateUI();
+	</script>
+</body>
+
+</html>
