@@ -44,21 +44,12 @@ a {
 }
 
 @media (max-width: 700px) {
-
-	html,
-	body {
-		height: auto;
-	}
-
 	.time {
 		flex-flow: column;
+		font-size: 120px;
 	}
 
 	.time-unit {
 		margin: 0px;
-	}
-
-	a {
-		margin-bottom: 20px;
 	}
 }
