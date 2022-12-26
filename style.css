@@ -4,13 +4,6 @@ body {
 	padding: 0px;
 	width: 100%;
 	height: 100%;
-
-	background-image: url("bg.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-
-	color: white;
-	font-family: Arial;
 }
 
 body {
@@ -18,6 +11,13 @@ body {
 	flex-flow: column;
 	align-items: center;
 	justify-content: center;
+
+	background-image: url("bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	color: white;
+	font-family: Arial;
 }
 
 a {
@@ -44,11 +44,21 @@ a {
 }
 
 @media (max-width: 700px) {
+
+	html,
+	body {
+		height: auto;
+	}
+
 	.time {
 		flex-flow: column;
 	}
 
 	.time-unit {
 		margin: 0px;
+	}
+
+	a {
+		margin-bottom: 20px;
 	}
 }
